@@ -65,7 +65,7 @@ pipeline {
                     type: 'war']], 
                     credentialsId: 'nexus',
                     groupId: 'example.demo',
-                    nexusUrl: '172.31.20.162:8081', 
+                    nexusUrl: '172.31.43.255:8081', 
                     nexusVersion: 'nexus3',
                     protocol: 'http', 
                     repository: 'test', 
@@ -80,7 +80,7 @@ pipeline {
             steps{
                 script{
                     sshagent(['ssh']) {
-                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/devjob/target/*.war ubuntu@172.31.27.68:/opt/tomcat/webapps/'
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/devjob/target/*.war ubuntu@172.31.22.185:/opt/tomcat/webapps/'
                     }
                 }
             }
