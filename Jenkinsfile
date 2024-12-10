@@ -61,7 +61,7 @@ pipeline {
             steps{
                     nexusArtifactUploader artifacts: [[artifactId: 'helloworld', 
                     classifier: '', 
-                    file: '/var/lib/jenkins/workspace/Demo/target/helloworld-1.0-SNAPSHOT.war', 
+                    file: '/var/lib/jenkins/.m2/repository/example/demo/helloworld/1.0-SNAPSHOT/helloworld-1.0-SNAPSHOT.war', 
                     type: 'war']], 
                     credentialsId: 'nexus',
                     groupId: 'example.demo',
@@ -80,7 +80,7 @@ pipeline {
             steps{
                 script{
                     sshagent(['ssh']) {
-                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Demo/target/*.war ubuntu@172.31.22.185:/opt/tomcat/webapps/'
+                    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/.m2/repository/example/demo/helloworld/1.0-SNAPSHOT/*.war ubuntu@172.31.22.185:/opt/tomcat/webapps/'
                     }
                 }
             }
