@@ -1,6 +1,7 @@
 #!/bin/bash
-sudo su
-apt install openjdk-8-jre-headless -y   
+sudo su -
+apt update -y
+apt install openjdk-11-jre-headless -y   
 mkdir -p /opt/nexus/   
 mkdir -p /tmp/nexus/                           
 cd /tmp/nexus
