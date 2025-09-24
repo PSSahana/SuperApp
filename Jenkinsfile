@@ -62,7 +62,7 @@ pipeline {
             steps{
                     nexusArtifactUploader artifacts: [[artifactId: 'helloworld', 
                     classifier: '', 
-                    file: '/var/lib/jenkins/.m2/repository/example/demo/helloworld/1.0-SNAPSHOT/helloworld-1.0-SNAPSHOT.war', 
+                    file: '/var/lib/jenkins/.m2/repository/example/demo/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war', 
                     type: 'war']], 
                     credentialsId: 'nexus',
                     groupId: 'example.demo',
